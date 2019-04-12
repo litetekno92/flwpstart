@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flwpstart/models/post.dart';
+import 'package:flwpstart/models/wppost2.dart';
 
 class PostCard extends StatefulWidget {
 

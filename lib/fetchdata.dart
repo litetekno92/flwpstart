@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flwpstart/models/post.dart';
+import 'package:flwpstart/models/wppost2.dart';
 import 'package:flwpstart/utils/API.dart';
 import 'package:flwpstart/widgets/card.dart';
 
@@ -41,7 +41,7 @@ class _FetchDataState extends State<FetchData> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Fetch Data JSON"),
+          title: Text("Wordpress api"),
         ),
         body: ListView.builder(
           itemCount: posts.length,
