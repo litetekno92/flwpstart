@@ -26,6 +26,7 @@ class Post {
       excerpt: Content.fromJson(json["excerpt"]),
       author: json["author"],
       featuredMedia: json["featured_media"],
+      links: Links.fromJson(json["_links"]),
     );
     // thumbnailUrl: json['thumbnailUrl'],
   }
