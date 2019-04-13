@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flwpstart/models/post.dart';
+import 'package:flwpstart/widgets/single.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:flutter_html_view/flutter_html_view.dart';
 
@@ -59,12 +60,7 @@ class _PostCardState extends State<PostCard> {
                           context,
                           new MaterialPageRoute(
                             // builder: (context) => new VirtuoozaPost(post: posts[index]),
-                            builder: (context) => new Container(
-                                  child: new HtmlView(
-                                    data: post.content.rendered,
-                                    stylingOptions: null,
-                                  ),
-                                ),
+                            builder: (context) => new SinglePost(post: posts[index]),
                             //            Text(
                             //     post.content.rendered.replaceAll(new RegExp(r'<[^>]*>'), '')
                             // ),
