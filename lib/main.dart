@@ -19,5 +19,20 @@ class MyApp extends StatelessWidget {
 }
 
 
+// theme: ThemeData( // adding a theme
 
+//     brightness: Brightness.dark, //changing the theme to dark
+//         primaryColor: Colors.lightBlue[900], // color change for links 
+//         accentColor: Colors.cyan[600], // i dont know 
+//         fontFamily: 'NotoSansArabic' ,
+//         tabBarTheme: TabBarTheme(
+        
+//         ),
+//         iconTheme: IconThemeData(
+
+//         ),
+                
+        
+      
+//       ) ,
 
