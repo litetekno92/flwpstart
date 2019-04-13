@@ -7,8 +7,7 @@ class Post {
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return new Post._(
-      title: json['title'],
+      title: json['title']['rendered']);
       // thumbnailUrl: json['thumbnailUrl'],
-    );
   }
 }

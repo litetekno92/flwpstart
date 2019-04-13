@@ -1,7 +1,8 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flwpstart/models/wppost2.dart';
+import 'package:flwpstart/models/post.dart';
 import 'package:flwpstart/utils/API.dart';
 import 'package:flwpstart/widgets/card.dart';
 
@@ -23,6 +24,7 @@ class _FetchDataState extends State<FetchData> {
       setState(() {
         Iterable list = json.decode(response.body);
         posts = list.map((model) => Post.fromJson(model)).toList();
+   //     posts.forEach((post) => log(post.title));
         isLoading = false;
       });
     });
@@ -47,6 +49,7 @@ class _FetchDataState extends State<FetchData> {
           itemCount: posts.length,
           itemBuilder: (context, index) {
             // var photo= posts[index];
+            
             return PostCard(posts[index]);
           }
           //     child: ListTile(

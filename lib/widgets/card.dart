@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flwpstart/models/wppost2.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flwpstart/models/post.dart';
 
 class PostCard extends StatefulWidget {
 
@@ -26,8 +27,10 @@ class PostCard extends StatefulWidget {
     //   body:
             Card(
               child: ListTile(
+                
                   contentPadding: EdgeInsets.all(10.0),
                   title: new Text(post.title),
+                  // subtitle: Text(debugPrint('Title: post.title') ),
                   // trailing: new Image.network(
                   //   post.thumbnailUrl,
                   //   fit: BoxFit.cover,
