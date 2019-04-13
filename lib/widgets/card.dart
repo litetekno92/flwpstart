@@ -26,18 +26,20 @@ class _PostCardState extends State<PostCard> {
           child: Column(
             children: <Widget>[
               new Text(post.links.wpFeaturedmedia[0].href ?? ''),
-              new FadeInImage.memoryNetwork(
-                placeholder: kTransparentImage,
-                image: post.featuredMedia == 0
-                    ? 'images/placeholder.png'
-                    : post.links.wpFeaturedmedia[0].href,
+              // new FadeInImage.memoryNetwork(
+              //   placeholder: kTransparentImage,
+              //   image: post.featuredMedia == 0
+              //       ? 'images/placeholder.png'
+              //       : post.links.wpFeaturedmedia[0].href,
+              // ),
+              Center(
+                child: new FadeInImage.assetNetwork(
+                  placeholder: 'images/placeholder.png',
+                  image: post.links.wpFeaturedmedia[0].href ??
+                      'https://picsum.photos/250?image=9',
+                ),
               ),
-               new FadeInImage.assetNetwork(
-                placeholder: 'images/placeholder.png',
-                image: post.featuredMedia == 0
-                    ? 'images/placeholder.png'
-                    : post.links.wpFeaturedmedia[0].href,
-              ),
+
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new ListTile(
@@ -58,13 +60,11 @@ class _PostCardState extends State<PostCard> {
                           new MaterialPageRoute(
                             // builder: (context) => new VirtuoozaPost(post: posts[index]),
                             builder: (context) => new Container(
-                              child: new HtmlView(
-                                data: post.content.rendered,
-                                stylingOptions: null,
-                                
-                              ),
-
-                            ),
+                                  child: new HtmlView(
+                                    data: post.content.rendered,
+                                    stylingOptions: null,
+                                  ),
+                                ),
                             //            Text(
                             //     post.content.rendered.replaceAll(new RegExp(r'<[^>]*>'), '')
                             // ),
