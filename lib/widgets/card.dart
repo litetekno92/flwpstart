@@ -25,6 +25,7 @@ class _PostCardState extends State<PostCard> {
         Card(
           child: Column(
             children: <Widget>[
+              new Text(post.links.wpFeaturedmedia[0].href),
               new FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
                 image: post.featuredMedia == 0
@@ -50,14 +51,14 @@ class _PostCardState extends State<PostCard> {
                           context,
                           new MaterialPageRoute(
                             // builder: (context) => new VirtuoozaPost(post: posts[index]),
-                            builder: (context) => new HtmlView(
+                            builder: (context) => new Container(
+                              child: new HtmlView(
                                 data: post.content.rendered,
-                                //baseURL: "", // optional, type String
-                                onLaunchFail: (url) {
-                                  // optional, type Function
-                                  print("launch $url failed");
-                                }),
+                                stylingOptions: null,
+                                
+                              ),
 
+                            ),
                             //            Text(
                             //     post.content.rendered.replaceAll(new RegExp(r'<[^>]*>'), '')
                             // ),
