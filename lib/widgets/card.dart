@@ -25,7 +25,8 @@ class _PostCardState extends State<PostCard> {
         Card(
           child: Column(
             children: <Widget>[
-              new Text(post.embedded.wpFeaturedmedia[0].sourceUrl ?? ' '),
+              new Text(post.title.rendered ?? ' '),
+              // new Text(post.embedded.wpFeaturedmedia[0].sourceUrl ?? ' '),
                   ],
                 ),
               ),
