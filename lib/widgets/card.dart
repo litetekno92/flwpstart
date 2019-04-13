@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flwpstart/models/post.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class PostCard extends StatefulWidget {
 
@@ -21,29 +22,55 @@ class PostCard extends StatefulWidget {
   
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
-    return 
-    // Scaffold(
-    //   body:
-            Card(
-              child: ListTile(
-                
-                  contentPadding: EdgeInsets.all(10.0),
-                  title: new Text(post.title.rendered),
-                  subtitle: new Text(post.excerpt.rendered),
-                 // subtitle: Text(debugPrint('Title: post.title') ),
-                  // trailing: new Image.network(
-                  //   post.thumbnailUrl,
-                  //   fit: BoxFit.cover,
-                  //   height: 40.0,
-                  //   width: 40.0,
-                  // )
-                  ),
-           
-    );
+    return Column(
+      children: <Widget>[
+              Card(
+                child: Column(
+                  children: <Widget>[
+                    new FadeInImage.memoryNetwork(
+                      placeholder: kTransparentImage,
+                      image: post.featuredMedia == 0
+                          ? 'images/placeholder.png'
+                          : post.links.wpFeaturedmedia[0].href,
+                    ),
+                    new Padding(
+                      padding: EdgeInsets.all(10.0),
+                      child: new ListTile(
+                        title: new Padding(
+                            padding: EdgeInsets.symmetric(vertical: 10.0),
+                            child: new Text(post.title.rendered)),
+                        subtitle: new Text(
+                            post.excerpt.rendered.replaceAll(new RegExp(r'<[^>]*>'), '')
+                        ),
+                      )
+                    ),
+                      new ButtonTheme.bar(
+                        child: new ButtonBar(
+                            children: <Widget>[
+                              new FlatButton(
+                              child: const Text('READ MORE'),
+                              onPressed: () { Navigator.push(
+                                  context, new MaterialPageRoute(
+                                  // builder: (context) => new VirtuoozaPost(post: posts[index]),
+                                   builder: (context) => new Text(
+                            post.content.rendered.replaceAll(new RegExp(r'<[^>]*>'), '')
+                        ),
+                                  ),
+                                ); },
+                              ),
+                            ],
+                        ),
+                      ),
+                  ],
+                ),
+              )
+            ],
+          );
+        }
+
    
   }
 
  
 
-}
+
