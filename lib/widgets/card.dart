@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flwpstart/models/embedpost.dart';
 import 'package:flwpstart/widgets/single.dart';
-import 'package:transparent_image/transparent_image.dart';
 import 'package:flutter_html_view/flutter_html_view.dart';
 
 class PostCard extends StatefulWidget {

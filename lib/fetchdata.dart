@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flwpstart/models/embedpost.dart';
@@ -29,7 +28,7 @@ class _FetchDataState extends State<FetchData> {
       });
     });
   }
-
+// transform(UTF8.decoder)
   initState() {
     super.initState();
     _fetchData();
