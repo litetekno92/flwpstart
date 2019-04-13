@@ -25,7 +25,7 @@ class _PostCardState extends State<PostCard> {
         Card(
           child: Column(
             children: <Widget>[
-              new Text(post.links.wpFeaturedmedia[0].href),
+              new Text(post.links.wpFeaturedmedia[0].href ?? ''),
               new FadeInImage.memoryNetwork(
                 placeholder: kTransparentImage,
                 image: post.featuredMedia == 0
