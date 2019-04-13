@@ -29,8 +29,9 @@ class PostCard extends StatefulWidget {
               child: ListTile(
                 
                   contentPadding: EdgeInsets.all(10.0),
-                  title: new Text(post.title),
-                  // subtitle: Text(debugPrint('Title: post.title') ),
+                  title: new Text(post.title.toString()),
+                  subtitle: new Text(post.excerpt.toString()),
+                 // subtitle: Text(debugPrint('Title: post.title') ),
                   // trailing: new Image.network(
                   //   post.thumbnailUrl,
                   //   fit: BoxFit.cover,
