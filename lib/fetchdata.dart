@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flwpstart/models/post.dart';
+import 'package:flwpstart/models/embedpost.dart';
 import 'package:flwpstart/utils/API.dart';
 import 'package:flwpstart/widgets/card.dart';
 

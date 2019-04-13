@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flwpstart/models/post.dart';
+import 'package:flwpstart/models/embedpost.dart';
 import 'package:flwpstart/widgets/single.dart';
 import 'package:transparent_image/transparent_image.dart';
 import 'package:flutter_html_view/flutter_html_view.dart';
@@ -26,7 +26,7 @@ class _PostCardState extends State<PostCard> {
         Card(
           child: Column(
             children: <Widget>[
-              new Text(post.links.wpFeaturedmedia[0].href ?? ''),
+              new Text(post.embedded.wpFeaturedmedia[0].sourceUrl ?? ''),
               // new FadeInImage.memoryNetwork(
               //   placeholder: kTransparentImage,
               //   image: post.featuredMedia == 0
@@ -36,7 +36,7 @@ class _PostCardState extends State<PostCard> {
               Center(
                 child: new FadeInImage.assetNetwork(
                   placeholder: 'images/placeholder.png',
-                  image: post.links.wpFeaturedmedia[0].href ??
+                  image: post.embedded.wpFeaturedmedia[0].sourceUrl ??
                       'https://picsum.photos/250?image=9',
                 ),
               ),
@@ -47,9 +47,15 @@ class _PostCardState extends State<PostCard> {
                     title: new Padding(
                         padding: EdgeInsets.symmetric(vertical: 10.0),
                         child: new Text(post.title.rendered)),
-                    subtitle: new Text(post.excerpt.rendered
-                        .replaceAll(new RegExp(r'<[^>]*>'), '')),
-                  )),
+                    subtitle: 
+                    new HtmlView(
+                      data: post.excerpt.rendered,
+                      stylingOptions: null,
+                        ),
+                    // new Text(post.excerpt.rendered
+                    //     .replaceAll(new RegExp(r'<[^>]*>'), '')),
+                  )
+                  ),
               new ButtonTheme.bar(
                 child: new ButtonBar(
                   children: <Widget>[

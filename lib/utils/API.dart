@@ -5,7 +5,7 @@ const baseUrl = "https://www.lemedia.sn";
 
 class API {
   static Future fetchData() {
-    var url = baseUrl + "/wp-json/wp/v2/posts?_embbed";
-    return http.get(url);
+    var url = baseUrl + "/wp-json/wp/v2/posts?_embed";
+    return http.get(url,headers: {"Accept": "application/json"});
   }
 }

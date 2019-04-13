@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flwpstart/models/post.dart';
+import 'package:flwpstart/models/embedpost.dart';
 import 'package:transparent_image/transparent_image.dart';
 
 class SinglePost extends StatelessWidget {
@@ -21,7 +21,7 @@ class SinglePost extends StatelessWidget {
               placeholder: kTransparentImage,
               image: post.featuredMedia == 0
                   ? 'images/placeholder.png'
-                  : post.links.wpFeaturedmedia[0].href,
+                  : post.embedded.wpFeaturedmedia[0].sourceUrl,
             ),
             new Text(post.content.rendered.replaceAll(new RegExp(r'<[^>]*>'), ''))
           ],
