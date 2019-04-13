@@ -32,6 +32,12 @@ class _PostCardState extends State<PostCard> {
                     ? 'images/placeholder.png'
                     : post.links.wpFeaturedmedia[0].href,
               ),
+               new FadeInImage.assetNetwork(
+                placeholder: 'images/placeholder.png',
+                image: post.featuredMedia == 0
+                    ? 'images/placeholder.png'
+                    : post.links.wpFeaturedmedia[0].href,
+              ),
               new Padding(
                   padding: EdgeInsets.all(10.0),
                   child: new ListTile(
