@@ -60,7 +60,7 @@ class _PostCardState extends State<PostCard> {
                           context,
                           new MaterialPageRoute(
                             // builder: (context) => new VirtuoozaPost(post: posts[index]),
-                            builder: (context) => new SinglePost(post: posts[index]),
+                            builder: (context) => new SinglePost(post: post),
                             //            Text(
                             //     post.content.rendered.replaceAll(new RegExp(r'<[^>]*>'), '')
                             // ),
