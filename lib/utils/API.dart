@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:http/http.dart' as http;
 
-const baseUrl = "https://www.lemedia.sn";
+const baseUrl = "https://imediasen.litetekno.tk";
 
 class API {
   static Future fetchData() {
